@@ -1,0 +1,1 @@
+global.API_PROXY = 'https://bird.ioliu.cn/v1/?url=https://misc.kimiss.com/common/wxapi/clinique?';
