@@ -34,43 +34,43 @@
 	      homeJson: [
 	      	{
 	      		id: '1',
-	      		img: '../../../static/image/index_product_01.png',
+	      		img: '../static/image/index_product_01.png',
 	      		name: '倩碧天才黄油<br>克隆肌肤天然保护膜',
 	      		usedNum: ''
 	      	},
 	      	{
 	      		id: '2',
-	      		img: '../../../static/image/index_product_02.png',
+	      		img: '../static/image/index_product_02.png',
 	      		name: '倩碧水磁场保湿面霜<br>干皮救星 水润出击',
 	      		usedNum: ''
 	      	},
 	      	{
 	      		id: '3',
-	      		img: '../../../static/image/index_product_03.png',
+	      		img: '../static/image/index_product_03.png',
 	      		name: '倩碧淡斑美白精华<br>没有斑的肌肤',
 	      		usedNum: ''
 	      	},
 	      	{
 	      		id: '4',
-	      		img: '../../../static/image/index_product_04.png',
+	      		img: '../static/image/index_product_04.png',
 	      		name: '抗氧化维C安瓶精华<br>活活活活活的维C',
 	      		usedNum: ''
 	      	},
 	      	{
 	      		id: '5',
-	      		img: '../../../static/image/index_product_05.png',
+	      		img: '../static/image/index_product_05.png',
 	      		name: '倩碧小雏菊腮红<br>网红必备利器 断货王',
 	      		usedNum: ''
 	      	},
 	      	{
 	      		id: '6',
-	      		img: '../../../static/image/index_product_06.png',
+	      		img: '../static/image/index_product_06.png',
 	      		name: '倩碧撞色小方唇膏<br>浓郁出色 气场立现',
 	      		usedNum: ''
 	      	},
 	      	{
 	      		id: '7',
-	      		img: '../../../static/image/index_product_07.png',
+	      		img: '../static/image/index_product_07.png',
 	      		name: '倩碧真男人系列<br>净爽保湿 简单有效',
 	      		usedNum: ''
 	      	}
@@ -139,7 +139,6 @@
 	  			box-sizing:border-box;
 	  			margin-top: 34px;
 	  			width: 50%;
-	  			background: #ffffff;
 	  			border-radius: 10px;
 	  			&:nth-child(odd) {
 	  				padding-right: 5px;
@@ -150,7 +149,9 @@
 					.list_box {
 						width: 100%;
 						padding-bottom: 12px;
+						background: #ffffff;
 						box-shadow:0 12px 40px #EAEDEC;
+						border-radius: 5px;
 					}
 	  			.product_img {
 	  				img {
@@ -206,6 +207,12 @@
 	  					vertical-align: top;
 	  					width: 50%;
 	  					padding: 0 0 0 15px;
+	  					.name {
+	  						margin: 8px 0 3px;
+	  					}
+	  					span {
+	  						margin: 6px 0 0;
+	  					}
 	  					/*flex: 1;*/
 	  				}
 	  			}

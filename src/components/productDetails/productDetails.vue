@@ -71,9 +71,6 @@
   	<div class="comment-list-wrap" v-if="productDetails.articleNum > 0">
   		<div class="title">
   			<h3>蜜友评论({{productDetails.articleNum}})</h3>
-  			<div class="more">
-  				<span>全部</span>
-  			</div>
   		</div>
   		<div class="comment-list">
   			<ul>
@@ -82,12 +79,25 @@
   				</li>
   			</ul>
   		</div>
+  		<div class="comment-list">
+  			<ul>
+  				<li v-for="item in loadData">
+  					<comment-list-cont :commentCont="item"></comment-list-cont>
+  				</li>
+  			</ul>
+  			<infinite-loading @infinite="flipPages" ref="infiniteLoading">
+			    <span>
+			     	没有更多数据了！
+			    </span>
+			  </infinite-loading>
+  		</div>
   	</div>
   </div>
 </template>
 
 <script>
 	import { Swiper, Slide } from 'vue-swiper-component';
+	import InfiniteLoading from 'vue-infinite-loading';
 	import carousellist from '../carousellist/carousellist';
 	import commentListCont from '../comment/comment';
 	import returns from '../return/return';
@@ -103,7 +113,9 @@
         commentListData: [],
         bannerSrc: '', //banner图链接
         starRating: '', // 星评链接
-        carouselList: '' // 轮播渲染数量
+        carouselList: '', // 轮播渲染数量
+        loadIndex: 1,
+        loadData: []
       }
 		},
 		watch: {},
@@ -114,32 +126,32 @@
 		  //初始化加载
 		  switch (this.productId) {
 	      case '1':
-          this.bannerSrc = "../../static/image/productDetails_banner_01.jpg",
-          this.starRating = "../../static/image/starRating_1.png"
+          this.bannerSrc = "../static/image/productDetails_banner_01.jpg",
+          this.starRating = "../static/image/starRating_1.png"
 	        break;
 	      case '2':
-	        this.bannerSrc = "../../static/image/productDetails_banner_02.jpg",
-          this.starRating = "../../static/image/starRating_2.png"
+	        this.bannerSrc = "../static/image/productDetails_banner_02.jpg",
+          this.starRating = "../static/image/starRating_2.png"
 	        break;
 	      case '3':
-	        this.bannerSrc = "../../static/image/productDetails_banner_03.jpg",
-          this.starRating = "../../static/image/starRating_3.png"
+	        this.bannerSrc = "../static/image/productDetails_banner_03.jpg",
+          this.starRating = "../static/image/starRating_3.png"
 	        break;
 	      case '4':
-	        this.bannerSrc = "../../static/image/productDetails_banner_04.jpg",
-          this.starRating = "../../static/image/starRating_4.png"
+	        this.bannerSrc = "../static/image/productDetails_banner_04.jpg",
+          this.starRating = "../static/image/starRating_4.png"
 	        break;
 	      case '5':
-	        this.bannerSrc = "../../static/image/productDetails_banner_5.jpg",
-          this.starRating = "../../static/image/starRating_5.png"
+	        this.bannerSrc = "../static/image/productDetails_banner_5.jpg",
+          this.starRating = "../static/image/starRating_5.png"
 	        break;
 	      case '6':
-	        this.bannerSrc = "../../static/image/productDetails_banner_06.jpg",
-          this.starRating = "../../static/image/starRating_6.png"
+	        this.bannerSrc = "../static/image/productDetails_banner_06.jpg",
+          this.starRating = "../static/image/starRating_6.png"
 	        break;
 	      case '7':
-	        this.bannerSrc = "../../static/image/productDetails_banner_07.jpg",
-          this.starRating = "../../static/image/starRating_7.png"
+	        this.bannerSrc = "../static/image/productDetails_banner_07.jpg",
+          this.starRating = "../static/image/starRating_7.png"
 	        break;
 	      default:
 	        console.log('default' + this.productId);
@@ -173,6 +185,22 @@
 		  		name: 'commentDetails',
 		  		query: {dpid: dpid}
 		  	})
+		  },
+		  flipPages ($state) {
+		  	var _this = this;
+		  	var list = [];
+		  	this.$http.get(API_PROXY + 'rd=1002&id=' + _this.productId + '&ie=' + _this.loadIndex)
+			  	.then(res => {
+			  		list = res.data.de.articles;
+			  		_this.loadData = _this.list.concat(list);
+			  		_this.loadIndex += 1;
+			  		$state.loaded();
+			  		console.log(_this.loadData, '翻页')
+			  	})
+			  	.catch(err => {
+		  			console.log(err, '翻页错误');
+		  			$state.complete();
+		  		});
 		  }
 		},
 		directives: {
@@ -185,7 +213,8 @@
 		  labels,
 		  returns,
 		  Swiper,
-    	Slide
+    	Slide,
+    	InfiniteLoading
 		}
   };
 </script>
@@ -353,7 +382,7 @@
 			}
 		}
 		.comment-list-wrap {
-			margin: 25px 15px 108px;
+			margin: 25px 15px 0;
 			padding: 0 10px;
 			.comment-list {
 				ul {
