@@ -150,12 +150,14 @@
 				height: 70px;
 				overflow: hidden;
 				text-align: center;
-				border-radius: 3px;
+				border-radius: 4px;
 				&:nth-child(2) {
 					margin: 0 8px;
 				}
 				img {
-					width: 100%;
+					display: inline-block;
+					height: 100%;
+					border-radius: 4px;
 				}
 			}
 		}

@@ -124,6 +124,7 @@
 <style scoped lang="less">
 	.home {
 		padding: 0 15px;
+		line-height: 1;
 	  .banner {
 	    img {
 	    	display: block;
@@ -208,12 +209,8 @@
 	  					width: 50%;
 	  					padding: 0 0 0 15px;
 	  					.name {
-	  						margin: 8px 0 3px;
+	  						margin: 6px 0 6px;
 	  					}
-	  					span {
-	  						margin: 6px 0 0;
-	  					}
-	  					/*flex: 1;*/
 	  				}
 	  			}
 	  		}

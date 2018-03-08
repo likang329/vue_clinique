@@ -82,6 +82,15 @@ li {
 
 html, body {
     width: 100%;
+}
+
+body {
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/*html, body {
+    width: 100%;
     font-size: 625%!important;
 }
 
@@ -89,7 +98,7 @@ body {
 	font-size: .14rem!important;
     -webkit-text-size-adjust: none;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
+}*/
 
 input, textarea, select, option {
   outline: none;

@@ -133,9 +133,6 @@
 			  })
 		  },
 		  screenSkin (e) {
-		  	if (e == 0) {
-		  		this.initialization();
-		  	}
 		  	this.list = [];
 		  	this.pagesIndex = 1;
 		  	this.skinIndex = e;
@@ -144,9 +141,6 @@
 	      });
 		  },
 		  screenScore (e) {
-		  	if (e == 0) {
-		  		this.initialization();
-		  	}
 		  	this.list = [];
 		  	this.pagesIndex = 1;
 		  	this.scoreIndex = e;
@@ -155,9 +149,6 @@
 	      });
 		  },
 		  screenAge (e) {
-		  	if (e == 0) {
-		  		this.initialization();
-		  	}
 		  	this.list = [];
 		  	this.pagesIndex = 1;
 		  	this.ageIndex = e;
@@ -206,6 +197,7 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
 	.allComments {
+		line-height: 1;
 		.returns-button {
 			margin: 14px 0 14px 14px;
 		}
@@ -256,8 +248,8 @@
 				li {
 					display: inline-block;
 					vertical-align: top;
-					margin: 0 5px;
-					padding: 7px 12px;
+					margin: 0 4px;
+					padding: 7px 10px;
 					font-size: 12px;
 					background: rgb(225,238,233);
 					color: rgb(51,51,51);
