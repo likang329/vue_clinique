@@ -1,6 +1,6 @@
 # clinique
 
-> 项目展示链接：https://lk0329.github.io/vue_clinique/dome/index.html
+> 项目展示链接：https://likang329.github.io/vue_clinique/dome/index.html
 
 ## Build Setup
 
