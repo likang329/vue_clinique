@@ -199,11 +199,19 @@
 	.allComments {
 		line-height: 1;
 		.returns-button {
-			margin: 14px 0 14px 14px;
+			position: fixed;
+			left: 0;
+			top: 0;
+			z-index: 10;
+			width: 100%;
+			padding: 14px 0 14px 14px;
+			border-bottom: 1px solid #999;
+			background: #fff;
 		}
 		.screen-tab {
 			width: 100%;
 			height: 47px;
+			margin-top: 47px;
 			border-bottom: 1px solid rgb(228,227,224);
 			background: rgb(241,246,245);
 			ul {

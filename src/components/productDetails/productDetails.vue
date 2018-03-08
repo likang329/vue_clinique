@@ -1,5 +1,5 @@
 <template>
-  <div class="productDetails">
+  <div class="productDetails" :class="productDetailsCls + productId">
   	<!-- 头部 -->
   	<header class="banner">
   		<img class="bannerImg" :src="bannerSrc"/>
@@ -111,6 +111,7 @@
         productId: this.$route.query.cid, //上一页传进来的产品ID
         productDetails: [], //产品详细数据
         commentListData: [],
+        productDetailsCls: 'productDetails-back',
         bannerSrc: '', //banner图链接
         starRating: '', // 星评链接
         carouselList: '', // 轮播渲染数量
@@ -290,23 +291,22 @@
 				}
 			}
 			.briefIntroduction {
-				/*box-sizing: border-box;*/
-				/*width: 100%;*/
 				position: relative;
 				z-index: 1;
 				margin: calc(-17%) 15px 0;
 				padding: 18px 15px;
 				font-size: 12px;
 				line-height: 18px;
-				border-radius: 2px;
+				border-radius: 3px;
 				color: rgb(102,102,102);
 				background: rgb(255,255,255);
-				box-shadow:0 12px 40px #EAEDEC;
+				border-radius: 3px;
 			}
 			.returns-button {
-				position: absolute;
+				position: fixed;
 				left: 14px;
 				top: 14px;
+				z-index: 10;
 			}
 		}
 		.title {
@@ -335,9 +335,11 @@
 			}
 		}
 		.carousel {
+			height: 230px;
 			margin: 25px 15px 0;
 			padding: 0 10px;
 			background: #ffffff;
+			border-radius: 3px;
 			.content {
 				display: flex;
 				padding-top: 7px;
@@ -385,6 +387,7 @@
 		.comment-list-wrap {
 			margin: 25px 15px 0;
 			padding: 0 10px;
+			border-radius: 3px;
 			.comment-list {
 				ul {
 					li {
@@ -396,6 +399,118 @@
 					}
 				}
 			}
+		}
+	}
+	.productDetails-back1 {
+		.banner {
+			.productIntroduce {
+				.label {
+					li {
+						background:#3A3724;
+  					color:#fff;
+					}
+				}
+			}
+				
+		}
+		.briefIntroduction, .comment-list-wrap,.carousel {
+			box-shadow:0 2px 25px #F5F3E2;
+		}
+	}
+	.productDetails-back2 {
+		.banner {
+			.productIntroduce {
+				.label {
+					li {
+						color: #6c3f58;
+  					background: #EBCCDD;
+					}
+				}
+			}
+				
+		}
+		.briefIntroduction, .comment-list-wrap,.carousel {
+			box-shadow:0 2px 25px #F5ECF1;
+		}
+	}
+	.productDetails-back3 {
+		.banner {
+			.productIntroduce {
+				.label {
+					li {
+						color: #ffffff;
+  					background: #69BF95;
+					}
+				}
+			}
+				
+		}
+		.briefIntroduction, .comment-list-wrap,.carousel {
+			box-shadow:0 2px 25px #E6EBE8;
+		}
+	}
+	.productDetails-back4 {
+		.banner {
+			.productIntroduce {
+				.label {
+					li {
+						color: #ffffff;
+  					background: #FF9E19;
+					}
+				}
+			}
+				
+		}
+		.briefIntroduction, .comment-list-wrap,.carousel {
+			box-shadow:0 2px 25px #F7EDE0;
+		}
+	}
+	.productDetails-back5 {
+		.banner {
+			.productIntroduce {
+				.label {
+					li {
+						color: #ffffff;
+  					background: #EC6CA5;
+					}
+				}
+			}
+				
+		}
+		.briefIntroduction, .comment-list-wrap,.carousel {
+			box-shadow:0 2px 25px #F5E5EC;
+		}
+	}
+	.productDetails-back6 {
+		.banner {
+			.productIntroduce {
+				.label {
+					li {
+						color: #ffffff;
+  					background: #E3417E;
+					}
+				}
+			}
+				
+		}
+		.briefIntroduction, .comment-list-wrap,.carousel {
+			box-shadow:0 2px 25px #FBF1F3;
+		}
+	}
+	.productDetails-back7 {
+		.banner {
+			.productIntroduce {
+				.label {
+					li {
+						color: #ffffff;
+  					background: #51575F;
+					}
+				}
+			}
+				
+		}
+		.briefIntroduction, .comment-list-wrap,.carousel {
+			box-shadow:0 2px 25px #E4E4E5;
 		}
 	}
 </style>

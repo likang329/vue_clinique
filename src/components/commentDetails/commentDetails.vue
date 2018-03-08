@@ -89,9 +89,10 @@
 				width: 100%;
 			}
 			.returns-button {
-				position: absolute;
+				position: fixed;
 				left: 14px;
 				top: 14px;
+				z-index: 10;
 			}
 		}
 		.headPortrait-text {
