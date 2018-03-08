@@ -1,6 +1,6 @@
 # clinique
 
-> this is dome
+> 项目展示链接：https://lk0329.github.io/vue_clinique/dome/index.html
 
 ## Build Setup
 
